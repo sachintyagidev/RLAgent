@@ -1,7 +1,6 @@
 # RLAgent
 Reinforcement learning based model by thinking on policies, goals, knowledge base, environment and reward function etc.
 
-
 The Environment: AGENT WORLD
 There are 5 components to take a note of,
 1. Go to Power Position : On Reaching here, agent will start its next move
@@ -13,3 +12,5 @@ should change
 4. Brown Blocks : Walls (Agent isn't allowed to penetrate through these
 positions)
 5. Start: Agent will be starting from (1,1) everytime the game is started.
+
+![alt text](https://github.com/sachintyagidev/RLAgent/blob/main/img/env.png?raw=true)

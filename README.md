@@ -13,4 +13,4 @@ should change
 positions)
 5. Start: Agent will be starting from (1,1) everytime the game is started.
 
-![alt text](https://github.com/sachintyagidev/RLAgent/blob/main/img/env.png?raw=true)
+![alt text](https://github.com/sachintyagidev/RLAgent/blob/main/img/RL_Agent.gif?raw=true)

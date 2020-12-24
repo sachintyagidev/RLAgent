@@ -39,8 +39,13 @@ class environment:
     #set "Start Position" blocks
     grid[self._startX][self._startY] = CellState.Start
 
-    #set "Goal" blocks
-    x, y = randint(5, len(grid[0]) - 1), randint(5, len(grid[1]) - 1)
+    #set "Goal" blocks (x>5 and x>6 but not 5,6 as wall)
+    x, y = 0, 0
+    while True:
+      x, y = randint(5, len(grid[0]) - 1), randint(5, len(grid[1]) - 1)
+      if(not(x==6 and y==5)):
+        break
+
     self._goal = State(x, y)
     grid[x][y] = CellState.Goal
 

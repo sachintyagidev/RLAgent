@@ -8,7 +8,6 @@ class agent:
   State-action learning will be a agent knowledge
   {
     State(0,0) : {
-      Action : []
       Explored: {
         UP : {
           visitCount: 2,
@@ -29,6 +28,7 @@ class agent:
 
   _startX, _startY = 0,0
   _current = State(_startX, _startY)
+  _action = [Action.UP, Action.Down, Action.Left, Action.Right]
 
   def reset(self):
     self._current = State(self._startX, self._startY)
@@ -39,7 +39,7 @@ class agent:
 
   #Init stateAction for knowledge base
   def defaultState(self):
-    return { 'Action' : [Action.UP, Action.Down, Action.Left, Action.Right], 'Explored': {} }
+    return { 'Explored': {} }
 
   def action(self, currentState):
     stateAction = None
@@ -52,8 +52,8 @@ class agent:
       isExplore = True
 
     nextAction = None
-    if (isExplore and len(stateAction['Action']) > 0):
-      nextAction = random.choices(stateAction['Action'], k=1)[0]
+    if (isExplore):
+      nextAction = random.choices(self._action, k=1)[0]
     else:
       bestCost = math.inf
       for actionKey in stateAction['Explored']:
@@ -91,7 +91,7 @@ class agent:
     #  self._knowledge[self._current]['Action'].remove(currentAction)
     
     self._current = nextState
-    return currentAction
+    return (currentAction, actionCost)
 
 
     
